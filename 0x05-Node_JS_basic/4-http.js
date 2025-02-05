@@ -1,17 +1,11 @@
 const http = require('http');
 
-const port = 1245;
-const hostname = 'localhost';
-
 const app = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  // res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello ALX!');
+  res.write('Hello ALX!');
+  res.end();
 });
 
-if (require.main === module) {
-  app.listen(port, hostname);
-}
+app.listen(1245);
 
 module.exports = app;
