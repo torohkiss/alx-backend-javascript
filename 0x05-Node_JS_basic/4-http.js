@@ -8,6 +8,8 @@ const app = http.createServer((req, res) => {
   res.end('Hello ALX!');
 });
 
-app.listen(port);
+if (require.main === module) {
+  app.listen(port);
+}
 
 module.exports = app;
