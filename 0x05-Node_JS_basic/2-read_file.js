@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-module.exports = function countStudents (path) {
+module.exports = function countStudents(path) {
   if (!fs.existsSync(path)) {
     throw Error('Cannot load the database');
   }
@@ -13,7 +13,7 @@ module.exports = function countStudents (path) {
       firstName: data[0],
       lastName: data[1],
       age: data[2],
-      field: data[3]
+      field: data[3],
     }));
   const sweField = dbData
     .filter((data) => data.field === 'SWE')
