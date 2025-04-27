@@ -21,12 +21,18 @@ export default class Pricing {
   set currency (x) {
     this._currency = x;
   }
-  
+
   displayFullPrice () {
     return `${this._amount} ${this._currency.name} (${this._currency.code})`;
   }
 
   static convertPrice (amount, conversionRate) {
+    if (typeof amount !== 'number') {
+      throw new TypeError("Amount must be a number");
+    }
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError("Conversion rate must be a number");
+    }
     return amount * conversionRate;
   }
 }
