@@ -1,4 +1,16 @@
 var printTeacher = function (firstName, lastName) {
     return "".concat(firstName.charAt(0), ". ").concat(lastName);
 };
-console.log(printTeacher('John', 'Doe'));
+var StudentClass = /** @class */ (function () {
+    function StudentClass(names) {
+        this.firstName = names.firstName;
+        this.lastName = names.lastName;
+    }
+    StudentClass.prototype.workOnHomework = function () {
+        return 'Currently working';
+    };
+    StudentClass.prototype.displayName = function () {
+        return this.firstName;
+    };
+    return StudentClass;
+}());
